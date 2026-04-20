@@ -183,6 +183,22 @@ button {
   color: var(--accent);
 }
 
+.brand-logo-wrap {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.brand-logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+}
+
 .header-call {
   min-height: 3rem;
   padding: 0 1.4rem;
@@ -499,12 +515,28 @@ button {
 
 .glass-card,
 .why-card,
-.work-card,
-.map-placeholder {
+.work-card {
   border: 1px solid rgba(255, 255, 255, 0.07);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-card);
+}
+
+.map-placeholder {
+  padding: 0;
+  overflow: hidden;
+  min-height: 28rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 28rem;
+  display: block;
+  border-radius: 12px;
 }
 
 .stat-card {
@@ -791,6 +823,73 @@ button {
   z-index: 1;
 }
 
+.premium-card {
+  width: 100%;
+  min-height: 280px;
+  padding: 1.8rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(34, 33, 33, 0.95), rgba(22, 21, 21, 0.98));
+  box-shadow: 
+    15px 15px 30px rgba(25, 25, 25, 0.8),
+    -15px -15px 30px rgba(60, 60, 60, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(47, 102, 177, 0.12), transparent 50%);
+  pointer-events: none;
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    20px 20px 40px rgba(25, 25, 25, 0.9),
+    -15px -15px 30px rgba(60, 60, 60, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(47, 102, 177, 0.3);
+}
+
+.card-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgba(47, 102, 177, 0.6);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+.premium-card h3 {
+  margin: 0 0 0.9rem 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+}
+
+.premium-card p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
 .why-card h3,
 .work-card h3,
 .testimonial-card p {
@@ -821,67 +920,64 @@ button {
 
 .why-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
 }
 
 .trust-card {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 1.2rem;
-  line-height: 1.6;
-}
-
-.trust-card-shell {
-  background: linear-gradient(135deg, #fffffff5, #3a4b8a, #ffffff98);
-  padding: 1px;
-  border-radius: 1.2rem;
-  box-shadow: 0px 1rem 1.5rem -0.9rem #000000e1;
-  width: 100%;
-}
-
-.trust-card-content {
-  position: relative;
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #222121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
-  width: 100%;
-  padding: 2rem;
-  border-radius: 1.2rem;
-  color: #ffffff;
+  justify-content: flex-start;
+  padding: 1.4rem 1.25rem;
+  gap: 0.5rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #0d1120 0%, #3a4b8a 43%, #0d1120 100%);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.trust-card-shell {
+  display: contents;
+}
+
+.trust-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .trust-icon {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  font-size: 1.9rem;
+  font-size: 1.55rem;
+  color: #9cc4ff;
+  margin-bottom: 0.25rem;
 }
 
 .trust-card h3 {
   margin-top: 0;
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: #fff;
+  line-height: 1.3;
 }
 
 .trust-card .para {
-  z-index: 1;
-  opacity: 1;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.92);
-  transition: all 0.3s ease;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
 }
 
 .trust-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .work-card {
@@ -946,11 +1042,51 @@ button {
   box-shadow: var(--shadow-card);
 }
 
-.offer-image {
-  min-height: 25rem;
+.offer-section {
   background-image:
-    linear-gradient(180deg, rgba(10, 17, 29, 0.12), rgba(2, 5, 11, 0.48)),
+    linear-gradient(135deg, rgba(10, 17, 29, 0.88), rgba(15, 26, 45, 0.92)),
+    url("./img/offer-bg.png");
+  background-size: cover;
+  background-position: center right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.offer-section .cta-banner {
+  padding: 4rem 2rem;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.offer-copy {
+  max-width: 45rem;
+}
+
+.offer-copy .section-title {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.offer-copy .section-text {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.offer-image {
+  min-height: 28rem;
+  background-image:
+    linear-gradient(135deg, rgba(10, 17, 29, 0.08), rgba(2, 5, 11, 0.18)),
     url("./img/offer.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .logo-marquee-section {
@@ -1448,18 +1584,7 @@ button {
 
 .map-panel {
   min-height: 100%;
-}
-
-.map-placeholder {
-  min-height: 24rem;
-  border-radius: 0;
-  display: grid;
-  place-items: center;
-  padding: 2rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03)),
-    radial-gradient(circle at center, rgba(54, 104, 176, 0.14), transparent 55%);
-  text-align: center;
+  width: 100%;
 }
 
 .map-placeholder strong {
@@ -1484,6 +1609,20 @@ button {
   font-size: 1.1rem;
   font-weight: 800;
   color: #fff;
+}
+
+.brand-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-logo {
+  width: 2.3rem;
+  height: 2.3rem;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
 }
 
 .footer-list {
