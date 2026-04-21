@@ -46,6 +46,18 @@ img {
   max-width: 100%;
 }
 
+/* Prevent image flashing on page reload - ensure visibility during ScrollReveal animation */
+img[src] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.diagnostics-image,
+.workshop-car-image {
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
 :root {
   --bg-main: #030812;
   --bg-surface: #081221;
@@ -274,6 +286,8 @@ button {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  background: #050b16;
+  display: block;
 }
 
 .hero-overlay {

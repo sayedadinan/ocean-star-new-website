@@ -78,8 +78,8 @@ window.addEventListener("scroll", scrollUp);
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
-  duration: 1800,
-  delay: 200,
+  duration: 800,
+  delay: 100,
   reset: false,
 });
 
@@ -87,22 +87,22 @@ sr.reveal(
   ".home-title, .section-title, .footer-title, .brand-mark, .copyright"
 );
 sr.reveal(".home-subtitle, .home-elec, .hero-actions, .section-text", {
-  delay: 300,
+  delay: 150,
 });
 sr.reveal(".home-info, .services-grid, .why-grid, .work-grid, .footer-list", {
-  delay: 350,
+  delay: 200,
   interval: 100,
 });
 sr.reveal(".home-img, .about-img, .offer-image, .map-panel", {
   origin: "right",
-  delay: 350,
+  delay: 150,
 });
 sr.reveal(".about-title, .contact-copy, .car-info", {
   origin: "left",
-  delay: 350,
+  delay: 150,
 });
 sr.reveal(".card-box, .testimonial-card, .stat-card, .service-card", {
   origin: "bottom",
-  delay: 250,
+  delay: 100,
   interval: 120,
 });
