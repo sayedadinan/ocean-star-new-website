@@ -234,7 +234,7 @@ button {
 
 .hero-tag {
   display: inline-block;
-  color: rgba(255, 255, 255, 0.75);
+  color: #f3a05a;
   font-size: 12px;
   letter-spacing: 5px;
   margin-bottom: 20px;
@@ -272,7 +272,7 @@ button {
   justify-self: end;
   text-align: left;
   padding: 1.3rem 1.4rem;
-  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  border-left: 3px solid rgba(245, 135, 42, 0.6);
   background: linear-gradient(180deg, rgba(8, 18, 33, 0.6), rgba(8, 18, 33, 0.18));
 }
 
@@ -331,6 +331,13 @@ button {
 .footer-grid {
   width: min(1160px, calc(100% - 2rem));
   margin: 0 auto;
+}
+
+/* Keep every .container section within the same centered width */
+.container {
+  width: min(1160px, calc(100% - 2rem));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-grid,
@@ -568,8 +575,8 @@ button {
 }
 
 .diagnostics-image {
-  min-height: 26rem;
-  width: min(100%, 25rem);
+  min-height: 34rem;
+  width: min(100%, 46rem);
   margin-left: -2.5rem;
   background: none;
   border-radius: 0;
@@ -635,6 +642,11 @@ button {
   text-align: center;
 }
 
+.section-heading.center .section-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .services-grid,
 .why-grid,
 .work-grid {
@@ -656,13 +668,13 @@ button {
 }
 
 .services-heading-image {
-  width: min(22rem, 100%);
+  width: min(40rem, 100%);
   height: auto;
   object-fit: contain;
 }
 
 .services-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-items: center;
 }
 
@@ -831,8 +843,19 @@ button {
 }
 
 .work-card {
-  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+  min-height: 8rem;
+  padding: 1.6rem 1.1rem;
   border-radius: 0;
+}
+
+.work-card h3 {
+  margin-top: 0;
 }
 
 .why-card p,
@@ -862,8 +885,9 @@ button {
 }
 
 .active-fc {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong)) !important;
-  color: #fff !important;
+  background: linear-gradient(135deg, #ffa95c, #ffce9e) !important;
+  color: #2a1804 !important;
+  box-shadow: 0 6px 16px rgba(245, 135, 42, 0.22) !important;
 }
 
 .work-grid {
@@ -894,9 +918,15 @@ button {
 
 .offer-image {
   min-height: 25rem;
+  background-color: transparent;
   background-image:
-    linear-gradient(180deg, rgba(10, 17, 29, 0.12), rgba(2, 5, 11, 0.48)),
-    url("./img/offer.png");
+    url("./img/american-car.png"),
+    radial-gradient(circle at 50% 58%, rgba(255, 255, 255, 0.1), transparent 62%);
+  background-size: contain, 92% 92%;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .logo-marquee-section {
@@ -921,11 +951,10 @@ button {
 }
 
 .logo-track img {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 6rem;
+  height: 3.5rem;
   object-fit: contain;
-  opacity: 0.72;
-  filter: grayscale(1) brightness(1.1);
+  opacity: 0.85;
 }
 
 .logo-track:hover {
@@ -1342,7 +1371,7 @@ button {
 
 .testimonial-slider {
   overflow: hidden;
-  padding: 0.5rem 0 3rem;
+  padding: 0.5rem 1rem 3rem;
 }
 
 .testimonial-card {
@@ -1689,4 +1718,118 @@ button {
   .cta-banner {
     padding: 1.2rem;
   }
+}
+
+/* Align every section to the same width as the rest of the site */
+.container {
+  width: min(1160px, calc(100% - 2rem));
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Vehicle brands — compact region columns with chips */
+.brand-regions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.brand-region-col {
+  padding: 1.4rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.brand-region-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.95rem;
+  border-bottom: 2px solid rgba(245, 135, 42, 0.35);
+}
+
+.brand-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.brand-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cdd6e6;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.brand-chip:hover {
+  border-color: rgba(245, 135, 42, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .brand-regions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-regions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About — give the car image more room and space out the button */
+.about-section .split-layout {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.about-section .cta-primary.compact {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 1100px) {
+  .about-section .split-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section .split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vehicle brands — interactive filter chips */
+.brand-filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+}
+
+/* Testimonials — light orange shade */
+.testimonial-card {
+  border-color: rgba(245, 135, 42, 0.22);
+  background:
+    linear-gradient(180deg, rgba(245, 135, 42, 0.08), rgba(245, 135, 42, 0.02));
+}
+
+.testimonial-card .quote-icon {
+  background: rgba(245, 135, 42, 0.16);
+  color: #ffb169;
 }
