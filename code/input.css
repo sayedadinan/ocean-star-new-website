@@ -89,11 +89,17 @@ button {
   letter-spacing: 0.02em;
 }
 
+.brand-mark strong {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
 .brand-mark small {
   display: block;
-  color: var(--text-muted);
-  font-size: 0.74rem;
-  letter-spacing: 0.06em;
+  color: #f5872a;
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -123,6 +129,7 @@ button {
   width: 2.6rem;
   height: 2.6rem;
   object-fit: contain;
+  transform: scale(1.25);
 }
 
 .header-call {
@@ -235,7 +242,7 @@ button {
 .hero-tag {
   display: inline-block;
   color: #f3a05a;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 5px;
   margin-bottom: 20px;
   font-weight: 600;
@@ -1418,9 +1425,17 @@ button {
   font-size: 1rem;
 }
 
+.contact-copy .eyebrow {
+  color: #f5872a;
+}
+
 .contact-list i {
-  color: var(--accent);
+  color: #f5872a;
   font-size: 1.2rem;
+}
+
+.contact-list i.ri-whatsapp-line {
+  color: #25d366;
 }
 
 .map-panel {
